@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   const [name, setName] = useState('');
   const [datetime, setDatetime] = useState('');
   const [description, setDescription] = useState('')
   function addNewTransaction() {
-    
+    const url = ''
+    // fetch()
   }
   return (
     <main>
