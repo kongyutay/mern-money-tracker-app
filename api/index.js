@@ -12,8 +12,8 @@ app.get('/api/test', (req, res) => {
 })
 
 app.post('/api/transaction', async (req, res) => {
-    //console.log(process.env.MONGO_URL)
-    await mongoose.connect(process.env.MONGO_URL, { ssl: false })
+    console.log("mongourl", process.env.MONGO_URL)
+    await mongoose.connect(process.env.MONGO_URL)
     const {name, price, description, datetime} = req.body;
     const transaction = await Transaction.create({
         name, 
