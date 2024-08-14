@@ -38,12 +38,20 @@ function App() {
         console.log("result", json);
       });
     });
-    // fetch()
   }
+
+  let balance = 0;
+  for( const transaction of transactions) {
+    balance += balance + transaction.price;
+  }
+  balance = balance.toFixed(2);
+  const fraction = balance.split('.')[1];
+  balance = balance.split('.')[0]
+
   return (
     <main>
       <h1>
-        $400 <span>.00</span>
+        ${balance}<span>{fraction}</span>
       </h1>
       <form onSubmit={addNewTransaction}>
         <div className="basic">
