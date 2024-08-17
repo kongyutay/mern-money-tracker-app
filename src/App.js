@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -42,7 +41,7 @@ function App() {
 
   let balance = 0;
   for( const transaction of transactions) {
-    balance += balance + transaction.price;
+    balance += + transaction.price;
   }
   balance = balance.toFixed(2);
   const fraction = balance.split('.')[1];
@@ -83,7 +82,7 @@ function App() {
             <div className="transaction">
               <div className="left">
                 <div className="name">{transaction.name}</div>
-                <div className="description">{transaaction.description}</div>
+                <div className="description">{transaction.description}</div>
               </div>
               <div className="right">
                 <div
@@ -97,6 +96,7 @@ function App() {
               </div>
             </div>
           ))}
+          
       </div>
     </main>
   );
